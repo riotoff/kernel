@@ -7,6 +7,8 @@
  * free to distribute as part of Kernel.
 */
 
+#include "addons/kernel.h"
+
 extern void kmain();
 
 void start() {
@@ -29,6 +31,16 @@ void kmain() {
         memset(input_buffer, 0, sizeof(input_buffer));
         
         write_to_screen("> ");
+
+        read_input(input_buffer, sizeof(input_buffer));
+
+        if (strcmp(input_buffer, "exit") == 0) {
+            exit_system(&running);
+        } else if (strcmp(input_buffer, "clear") == 0) {
+            clear_screen();
+        } else {
+            write_to_screen("command find op1.\n");
+        }
     }
 
     while (1);
