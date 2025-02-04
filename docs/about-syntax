@@ -1,1 +1,25 @@
+* /
+* gnu gpl license 3.0
+*
+* kernel/docs/about-syntax
+*
+* copyright (c) 2025  Arseniy Rayotov
+*
+* free to distribute as part of Kernel.
+* /
 
+Kernel syntax description
+=========================
+
+numbering:
+0 - 0 errors
+1 - 1+ errors
+
+
+system info meaning:
+sy0
+sy1
+
+operations meaning:
+op0
+op1
