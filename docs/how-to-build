@@ -1,7 +1,28 @@
-nasm -f bin src/boot/boot.asm -o build/boot.bin
-gcc -c -m00 -ffreestanding -nostdlib -Wall -Wextra src/kernel/main.c -o build/kernel.o # change -m00 to -m32 or -m64 (depends on your device and architecture)
-ld -T linker.ld -m XXXX -o build/kernel.tmp build/kernel.o # change XXXX to your emulation mode. (i386pe, i386pep, i386linux, elf_i386, elf32_x86_64)
-objcopy -O binary build/kernel.tmp build/kernel.bin
-dd if=/dev/zero of=build/kernel_x-x-x.img bs=512 count=100000 # change x-x-x to actual version of Kernel you're using
-dd conv=notrunc if=build/boot.bin of=build/kernel_x-x-x.img # change x-x-x to actual version of Kernel you're using
-dd conv=notrunc seek=1 if=build/kernel.bin of=build/kernel_x-x-x.img # change x-x-x to actual version of Kernel you're using
+* /
+* gnu gpl license 3.0
+*
+* kernel/docs/how-to-build
+*
+* copyright (c) 2025  Arseniy Rayotov
+*
+* free to distribute as part of Kernel.
+* /
+
+
+Build Kernel os guide
+=====================
+
+
+
+step 1.
+change OUTPUT_FORMAT in your kernel/linker.ld to variant proposed in comment after the OUTPUT_FORMAT function.
+
+
+step 2.
+change kernel/builder.sh file (follow comments).
+enter "sh builder.sh" command (be sure you're in main directory of Kernel operating system)
+
+
+step 3. (optional)
+enter "qemu-system-i386 -drive format=raw,file=build/kernel_x-x-x.img" (use numbers of version you're using instead of x-x-x)
+you can test it on other machine or on real pc (not recommended for real moment, it's not released yet)
