@@ -1,0 +1,18 @@
+* /
+* gnu gpl license 3.0
+*
+* kernel/docs/what-is-that
+*
+* copyright (c) 2025  Arseniy Rayotov
+*
+* free to distribute as part of Kernel.
+* /
+
+
+Info about Kernel and what is that
+==================================
+
+Kernel is an operating system made by Arseniy Rayotov (me).
+Kernel written on C (entire kernel) and Assembly (boot).
+Kernel got full open source with GNU GPL License 3.0.
+It's named so because i just like this name.
