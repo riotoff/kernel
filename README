@@ -1,6 +1,7 @@
  Kernel operating system
 =========================
 
+"What is that" info can be reached at kernel/docs/what-is-that.
 Build Kernel guide can be reached at kernel/docs/how-to-build.
 Syntax description can be reached at kernel/docs/about-syntax.
 
